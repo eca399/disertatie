@@ -35,7 +35,10 @@ def intersections_count(path):
             m = path[j]
             n = path[j + 1]
             
-            if(intersects(a, b, m, n)):
+#            if(intersects2(a,b,m,n) != intersects(a,b,m,n)):
+#               print("diff")
+            
+            if(intersects2(a, b, m, n)):
                 result += 1
                 
     return result
@@ -78,3 +81,11 @@ def intersects(a, b, m, n):
     
 
 #print(intersections_count([{"lat":0, "lon":0},{"lat":0, "lon":100},{"lat":100, "lon":100}, {"lat":-5, "lon":50}]))
+
+
+def ccw(A,B,C):
+    return (C["lat"]-A["lat"]) * (B["lon"]-A["lon"]) > (B["lat"]-A["lat"]) * (C["lon"]-A["lon"])
+
+# Return true if line segments AB and CD intersect
+def intersects2(A,B,C,D):
+    return ccw(A,C,D) != ccw(B,C,D) and ccw(A,B,C) != ccw(A,B,D)
