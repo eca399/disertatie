@@ -27,7 +27,7 @@ for i in range(number_of_clusters):
         for route in routes:
             route["points"] = []
             for index in range(route['route_start'], route['route_end']):
-                route["points"].append({'lat':df_gps.iloc[index]['lat'],'lon':df_gps.iloc[index]['lat'],'index':index})
+                route["points"].append({'lat':df_gps.iloc[index]['lat'],'lon':df_gps.iloc[index]['lon'],'index':index})
 
 with open('transition_mat_with_streets_and_points.json', 'w') as outfile:
     json.dump(transition_mat, outfile)
