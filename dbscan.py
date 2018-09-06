@@ -15,7 +15,7 @@ if (len(sys.argv) == 2):
         fast = True
 
 cluster_min_time = 5 #minim 5 minute in acelasi cluster
-# load the full location history json file downloaded from google
+# load the full location history json file
 df_gps = pd.read_csv('user_location.csv')
 print('There are {:,} rows'.format(len(df_gps)))
 
@@ -69,7 +69,6 @@ def dbscan_reduce(df, epsilon, x='lon', y='lat'):
     lats, lons = zip(*centermost_points)
     rep_points = pd.DataFrame({x:lons, y:lats})
     rep_points.tail()
-    
     # pull row from original data set where lat/lon match the lat/lon of each row of representative points
     rs = rep_points.apply(lambda row: df[(df[y]==row[y]) & (df[x]==row[x])].iloc[0], axis=1)
     
