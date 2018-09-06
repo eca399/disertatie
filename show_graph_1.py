@@ -20,7 +20,7 @@ df_clustered = pd.read_csv('user-location-clustered.csv')
 
 kstartPoint = 0
 kendPoint = 3
-kindex = 1
+kindex = 0
 # import pdb; pdb.set_trace()
 
 # with open('Intersections.txt', 'a') as f:
