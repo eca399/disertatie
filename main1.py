@@ -5,6 +5,7 @@ import pdb
 from datetime import datetime as dt
 import datetime
 import urllib.request
+import path_eval
 
 
 # from geopy.distance import great_circle
@@ -112,6 +113,15 @@ examplefile = sys.argv[1]
 
 
 df_test = pd.read_csv(examplefile)
+
+#computing ratio and intersections
+path = []
+for i in range(df_test.shape[0]):
+    path.append({"lat": df_test.iloc[i]['lat'], "lon": df_test.iloc[i]['lon'], "index": i})
+ratio = path_eval.path_length_vs_diameter(path)
+intersections = path_eval.intersections_count(path)
+print("ratio = {}\nintersections = {}".format(ratio, intersections))
+
 
 with open('transition_mat_with_streets.json', 'r') as f:
     transition_mat = json.load(f)
