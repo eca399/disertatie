@@ -105,7 +105,7 @@ def get_street_name(lat, lon):
         
 
 if (len(sys.argv) != 2):
-    print("example of usage: python main.py examples/example1.json")
+    print("example of usage: python main.py examples/example1.csv")
     sys.exit(1)
 
 examplefile = sys.argv[1]
