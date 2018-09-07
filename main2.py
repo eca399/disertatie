@@ -4,7 +4,7 @@ import path_eval
 
 
 if (len(sys.argv) != 2):
-    print("example of usage: python main.py examples/example1.csv")
+    print("example of usage: python main2.py examples/example1.csv")
     sys.exit(1)
 
 examplefile = sys.argv[1]
