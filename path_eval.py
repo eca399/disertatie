@@ -27,7 +27,7 @@ def path_length_vs_diameter(path):
 
 def intersections_count(path):
     result = 0
-    
+    intersection_list = []
     for i in range(len(path) - 2):
         a = path[i]
         b = path[i + 1]
@@ -39,9 +39,10 @@ def intersections_count(path):
 #               print("diff")
             
             if(intersects2(a, b, m, n)):
+                intersection_list.append([i, i + 1, j, j + 1])
                 result += 1
                 
-    return result
+    return result, intersection_list
 
 #tests if segment (a,b) intersects segment (m,n)
 def intersects(a, b, m, n):

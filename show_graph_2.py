@@ -40,13 +40,14 @@ path = []
 for i in range(df_test.shape[0]):
     x.append(df_test.iloc[i]['lat'])
     y.append(df_test.iloc[i]['lon'])
-    names.append(str(i + 1))
+    names.append(str(i))
     path.append({"lat": df_test.iloc[i]['lat'], "lon": df_test.iloc[i]['lon'], "index": i})
 sc = get_scatter(x, y)
 
 
 ratio = path_eval.path_length_vs_diameter(path)
-intersections = path_eval.intersections_count(path)
+intersections, intersection_list = path_eval.intersections_count(path)
+print('intersection_list {}'.format(intersection_list))
 
 def update_annot(ind):
 
