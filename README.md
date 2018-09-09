@@ -18,9 +18,9 @@ existing file:
 13)main.py - tests if the user has got lost or confused and sends an alert
 14)add_points_to_matrix.py - adding route's points to transition_mat (transition_mat_with_streets_and_points.json)
 15)add_info_to_matrix.py - adding roation, intersections and intersection_list to transition_mat (transition_mat_with_streets_and_points_and_info.json)
-14)show_graph_1.py - plot graph for start_point, end_point and index of route from trans_mat
-15)show_graph_2.py - plot graph for a csv
-16)intersections.py - write number of intersections for trans_mat (intersections.txt)
+16)show_graph_1.py - plot graph for start_point, end_point and index of route from trans_mat
+17)intersections.py - write number of intersections for trans_mat (intersections.txt)
+18) main2.py - read data from csv and show graph
 
 
 tests
