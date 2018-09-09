@@ -16,6 +16,11 @@ existing file:
 11)interest_points_max_times.py - compute the max times of staying in each interest point (max_times.json)
 12)show_graph.py - plots the collected points and the interest points
 13)main.py - tests if the user has got lost or confused and sends an alert
+14)add_points_to_matrix.py - adding route's points to transition_mat (transition_mat_with_streets_and_points.json)
+15)add_info_to_matrix.py - adding roation, intersections and intersection_list to transition_mat (transition_mat_with_streets_and_points_and_info.json)
+14)show_graph_1.py - plot graph for start_point, end_point and index of route from trans_mat
+15)show_graph_2.py - plot graph for a csv
+16)intersections.py - write number of intersections for trans_mat (intersections.txt)
 
 
 tests
@@ -49,3 +54,4 @@ main.py
 - verifying that the current route didn't surpass the maximum historical duration for the current source and destination
 - verifying that the current street is found in a historical route from the current source to the current destination
 - verifying, in the case when no destination was set, that the current street is found in all historical routes starting at the current source
+

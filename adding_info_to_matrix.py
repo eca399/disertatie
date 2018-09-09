@@ -29,7 +29,7 @@ for i in range(number_of_clusters):
         for route in routes:
             points = route["points"]
             route["ratio"] = path_eval.path_length_vs_diameter(points)
-            route["intersections"] = path_eval.intersections_count(points)
+            route["intersections"], route["intersection_list"] = path_eval.intersections_count(points)
             
 with open('transition_mat_with_streets_and_points_and_info.json', 'w') as outfile:
     json.dump(transition_mat, outfile)
