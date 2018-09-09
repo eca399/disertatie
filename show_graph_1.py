@@ -7,7 +7,7 @@ with open('transition_mat_with_streets_and_points_and_info.json', 'r') as f:
     
 kstartPoint = 0
 kendPoint = 4
-kindex = 21
+kindex = 1
 # import pdb; pdb.set_trace()
 
 x = [elem['lon'] for elem in transition_mat[kstartPoint][kendPoint]['routes'][kindex]['points']]
@@ -18,10 +18,10 @@ print(y)
 names = [str(elem['index']) for elem in transition_mat[kstartPoint][kendPoint]['routes'][kindex]['points']]
 
 norm = plt.Normalize(1,4)
-cmap = plt.cm.RdYlGn
+
 
 fig,ax = plt.subplots(figsize=[11, 8])
-sc = plt.scatter(x,y,c='b', s=5, cmap=cmap, norm=norm)
+sc = plt.scatter(x,y,c='b', s=5, norm=norm)
 
 annot = ax.annotate("", xy=(0,0), xytext=(20,20),textcoords="offset points",
                     bbox=dict(boxstyle="round", fc="w"),
