@@ -1,89 +1,89 @@
-elem[0][1] route[0] has intersections: 1
-elem[0][1] route[1] has intersections: 1
-elem[0][3] route[0] has intersections: 3
-elem[0][3] route[1] has intersections: 30
-elem[0][4] route[0] has intersections: 0
-elem[0][4] route[1] has intersections: 1
-elem[0][4] route[2] has intersections: 25
-elem[0][4] route[3] has intersections: 1
-elem[0][4] route[4] has intersections: 3
-elem[0][4] route[5] has intersections: 0
-elem[0][4] route[6] has intersections: 0
-elem[0][4] route[7] has intersections: 2
-elem[0][4] route[8] has intersections: 0
-elem[0][4] route[9] has intersections: 0
-elem[0][4] route[10] has intersections: 2
-elem[0][4] route[11] has intersections: 0
-elem[0][4] route[12] has intersections: 52
-elem[0][4] route[13] has intersections: 0
-elem[0][4] route[14] has intersections: 1
-elem[0][4] route[15] has intersections: 0
-elem[0][4] route[16] has intersections: 25
-elem[0][4] route[17] has intersections: 3
-elem[0][4] route[18] has intersections: 0
-elem[0][4] route[19] has intersections: 0
-elem[0][4] route[20] has intersections: 10
-elem[0][4] route[21] has intersections: 211
-elem[0][4] route[22] has intersections: 1
-elem[0][4] route[23] has intersections: 2
-elem[0][6] route[0] has intersections: 32
-elem[0][6] route[1] has intersections: 83
-elem[0][7] route[0] has intersections: 0
-elem[1][0] route[0] has intersections: 0
-elem[1][0] route[1] has intersections: 0
-elem[1][0] route[2] has intersections: 1
-elem[1][6] route[0] has intersections: 11
-elem[1][8] route[0] has intersections: 3
-elem[2][0] route[0] has intersections: 12
-elem[3][0] route[0] has intersections: 1
-elem[3][0] route[1] has intersections: 0
-elem[4][0] route[0] has intersections: 0
-elem[4][0] route[1] has intersections: 0
-elem[4][0] route[2] has intersections: 0
-elem[4][0] route[3] has intersections: 1
-elem[4][0] route[4] has intersections: 0
-elem[4][0] route[5] has intersections: 0
-elem[4][0] route[6] has intersections: 0
-elem[4][0] route[7] has intersections: 0
-elem[4][0] route[8] has intersections: 9
-elem[4][0] route[9] has intersections: 0
-elem[4][0] route[10] has intersections: 46
-elem[4][0] route[11] has intersections: 1
-elem[4][0] route[12] has intersections: 48
-elem[4][0] route[13] has intersections: 0
-elem[4][0] route[14] has intersections: 0
-elem[4][0] route[15] has intersections: 3
-elem[4][0] route[16] has intersections: 79
-elem[4][0] route[17] has intersections: 0
-elem[4][0] route[18] has intersections: 10
-elem[4][0] route[19] has intersections: 39
-elem[4][0] route[20] has intersections: 702
-elem[4][0] route[21] has intersections: 0
-elem[4][0] route[22] has intersections: 1
-elem[4][0] route[23] has intersections: 109
-elem[4][0] route[24] has intersections: 3
-elem[4][0] route[25] has intersections: 0
-elem[4][1] route[0] has intersections: 7
-elem[4][1] route[1] has intersections: 0
-elem[4][1] route[2] has intersections: 0
-elem[4][1] route[3] has intersections: 0
-elem[4][2] route[0] has intersections: 1
-elem[4][2] route[1] has intersections: 0
-elem[4][5] route[0] has intersections: 0
-elem[4][6] route[0] has intersections: 2
-elem[4][7] route[0] has intersections: 16
-elem[4][9] route[0] has intersections: 3
-elem[4][9] route[1] has intersections: 1
-elem[5][0] route[0] has intersections: 0
-elem[6][0] route[0] has intersections: 15
-elem[6][0] route[1] has intersections: 76
-elem[6][0] route[2] has intersections: 0
-elem[6][0] route[3] has intersections: 3
-elem[6][0] route[4] has intersections: 35
-elem[6][4] route[0] has intersections: 0
-elem[6][8] route[0] has intersections: 2
-elem[6][8] route[1] has intersections: 0
-elem[7][6] route[0] has intersections: 2
-elem[8][6] route[0] has intersections: 1
-elem[8][6] route[1] has intersections: 34
-elem[9][0] route[0] has intersections: 0
+elem[0][1] route[0] has intersections: 1 and ratio 1.2768121943805286
+elem[0][1] route[1] has intersections: 1 and ratio 1.1135914892548318
+elem[0][3] route[0] has intersections: 2 and ratio 1.7266507597661818
+elem[0][3] route[1] has intersections: 8 and ratio 2.8325733013106853
+elem[0][4] route[0] has intersections: 0 and ratio 1.2128874055584606
+elem[0][4] route[1] has intersections: 0 and ratio 1.4856895494531637
+elem[0][4] route[2] has intersections: 1 and ratio 1.19345945312176
+elem[0][4] route[3] has intersections: 0 and ratio 1.1169801019807164
+elem[0][4] route[4] has intersections: 1 and ratio 1.4128478568496325
+elem[0][4] route[5] has intersections: 0 and ratio 1.1143216732878154
+elem[0][4] route[6] has intersections: 0 and ratio 1.0955227580884925
+elem[0][4] route[7] has intersections: 0 and ratio 1.0085643571019973
+elem[0][4] route[8] has intersections: 0 and ratio 1.0
+elem[0][4] route[9] has intersections: 0 and ratio 1.3994716828030027
+elem[0][4] route[10] has intersections: 0 and ratio 1.1229447790111382
+elem[0][4] route[11] has intersections: 0 and ratio 1.0624571399202116
+elem[0][4] route[12] has intersections: 2 and ratio 2.22141995847183
+elem[0][4] route[13] has intersections: 0 and ratio 1.0458870235788478
+elem[0][4] route[14] has intersections: 0 and ratio 1.2637505641027391
+elem[0][4] route[15] has intersections: 0 and ratio 1.0
+elem[0][4] route[16] has intersections: 6 and ratio 2.0133461579945484
+elem[0][4] route[17] has intersections: 0 and ratio 1.303015751356672
+elem[0][4] route[18] has intersections: 0 and ratio 1.0
+elem[0][4] route[19] has intersections: 0 and ratio 1.0413697712656649
+elem[0][4] route[20] has intersections: 0 and ratio 1.0263026873844454
+elem[0][4] route[21] has intersections: 0 and ratio 1.5960167973369153
+elem[0][4] route[22] has intersections: 1 and ratio 1.0663146125463476
+elem[0][4] route[23] has intersections: 2 and ratio 1.1778245028029337
+elem[0][6] route[0] has intersections: 12 and ratio 2.1668502056538723
+elem[0][6] route[1] has intersections: 26 and ratio 2.5809699748277626
+elem[0][7] route[0] has intersections: 0 and ratio 1.1114114023842778
+elem[1][0] route[0] has intersections: 0 and ratio 1.000088692620793
+elem[1][0] route[1] has intersections: 0 and ratio 1.2170846065408873
+elem[1][0] route[2] has intersections: 1 and ratio 1.2076563415090815
+elem[1][6] route[0] has intersections: 2 and ratio 1.1204557830621464
+elem[1][8] route[0] has intersections: 1 and ratio 1.0796249698618765
+elem[2][0] route[0] has intersections: 0 and ratio 1.7979015355615742
+elem[3][0] route[0] has intersections: 0 and ratio 1.561334839271858
+elem[3][0] route[1] has intersections: 0 and ratio 1.0274847567332113
+elem[4][0] route[0] has intersections: 0 and ratio 1.0
+elem[4][0] route[1] has intersections: 0 and ratio 1.1624027330072457
+elem[4][0] route[2] has intersections: 0 and ratio 1.070839415649608
+elem[4][0] route[3] has intersections: 1 and ratio 1.1451372397304609
+elem[4][0] route[4] has intersections: 0 and ratio 1.0832416197439672
+elem[4][0] route[5] has intersections: 0 and ratio 1.0
+elem[4][0] route[6] has intersections: 0 and ratio 1.0177940359527466
+elem[4][0] route[7] has intersections: 0 and ratio 1.0
+elem[4][0] route[8] has intersections: 0 and ratio 1.2210704271896327
+elem[4][0] route[9] has intersections: 0 and ratio 1.2612789413874872
+elem[4][0] route[10] has intersections: 34 and ratio 3.5395187026268595
+elem[4][0] route[11] has intersections: 0 and ratio 2.0122325078373318
+elem[4][0] route[12] has intersections: 1 and ratio 1.9718944733714887
+elem[4][0] route[13] has intersections: 0 and ratio 1.0408816203025468
+elem[4][0] route[14] has intersections: 0 and ratio 1.1312134689377071
+elem[4][0] route[15] has intersections: 0 and ratio 1.5720297148245994
+elem[4][0] route[16] has intersections: 0 and ratio 1.5752692955303567
+elem[4][0] route[17] has intersections: 0 and ratio 1.0348212977160993
+elem[4][0] route[18] has intersections: 0 and ratio 2.619475344782572
+elem[4][0] route[19] has intersections: 4 and ratio 3.596822177515775
+elem[4][0] route[20] has intersections: 2 and ratio 2.165003344340345
+elem[4][0] route[21] has intersections: 0 and ratio 1.0000016597527672
+elem[4][0] route[22] has intersections: 1 and ratio 1.5239421076301138
+elem[4][0] route[23] has intersections: 6 and ratio 2.659186065628712
+elem[4][0] route[24] has intersections: 1 and ratio 1.5795440326711976
+elem[4][0] route[25] has intersections: 0 and ratio 1.049516955541397
+elem[4][1] route[0] has intersections: 5 and ratio 1.7780590765064992
+elem[4][1] route[1] has intersections: 0 and ratio 1.1687428616050655
+elem[4][1] route[2] has intersections: 0 and ratio 1.3887949415157415
+elem[4][1] route[3] has intersections: 0 and ratio 1.456697684418885
+elem[4][2] route[0] has intersections: 0 and ratio 1.2747782330959472
+elem[4][2] route[1] has intersections: 0 and ratio 1.1252323994730085
+elem[4][5] route[0] has intersections: 0 and ratio 1.0013924768479745
+elem[4][6] route[0] has intersections: 2 and ratio 1.9505037666066913
+elem[4][7] route[0] has intersections: 3 and ratio 1.4939037464575624
+elem[4][9] route[0] has intersections: 0 and ratio 1.6970286373871402
+elem[4][9] route[1] has intersections: 1 and ratio 1.3399614254560464
+elem[5][0] route[0] has intersections: 0 and ratio 1.0607712575920354
+elem[6][0] route[0] has intersections: 7 and ratio 2.0325471527315013
+elem[6][0] route[1] has intersections: 37 and ratio 1.2002407183743917
+elem[6][0] route[2] has intersections: 0 and ratio 1.1419573776463057
+elem[6][0] route[3] has intersections: 3 and ratio 1.100382903331961
+elem[6][0] route[4] has intersections: 18 and ratio 1.330085784694159
+elem[6][4] route[0] has intersections: 0 and ratio 1.0414183122734395
+elem[6][8] route[0] has intersections: 0 and ratio 1.203661771697842
+elem[6][8] route[1] has intersections: 0 and ratio 1.0119356280378158
+elem[7][6] route[0] has intersections: 1 and ratio 1.0711962021543677
+elem[8][6] route[0] has intersections: 0 and ratio 1.1913509844813788
+elem[8][6] route[1] has intersections: 2 and ratio 3.7875806383577455
+elem[9][0] route[0] has intersections: 0 and ratio 1.2410606577803744

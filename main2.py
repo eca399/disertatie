@@ -26,6 +26,9 @@ ratio = path_eval.path_length_vs_diameter(path)
 intersections, intersection_list = path_eval.intersections_count(path)
 
 print("ratio = {}\nintersections = {}".format(ratio, intersections))
+
+if intersections > 15 or ratio > 1.5:
+    print('An alarm was sent')
 ###plot the graph
 fig,ax = plt.subplots(figsize=[11, 8])   
 annot = ax.annotate("", xy=(0,0), xytext=(20,20),textcoords="offset points",

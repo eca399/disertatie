@@ -15,4 +15,5 @@ with open('Intersections.txt', 'w') as f:
         for j in range(df_clustered.shape[0]):
             for index in range(len(transition_mat[i][j]['routes'])):
                 no_inters = transition_mat[i][j]['routes'][index]['intersections']
-                f.write("elem[{}][{}] route[{}] has intersections: {}\n".format(i, j, index, no_inters))
+                ratio = transition_mat[i][j]['routes'][index]['ratio']
+                f.write("elem[{}][{}] route[{}] has intersections: {} and ratio {}\n".format(i, j, index, no_inters, ratio))

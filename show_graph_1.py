@@ -6,8 +6,8 @@ with open('transition_mat_with_streets_and_points_and_info.json', 'r') as f:
     transition_mat = json.load(f)
     
 kstartPoint = 0
-kendPoint = 3
-kindex = 0
+kendPoint = 4
+kindex = 21
 # import pdb; pdb.set_trace()
 
 x = [elem['lon'] for elem in transition_mat[kstartPoint][kendPoint]['routes'][kindex]['points']]
