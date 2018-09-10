@@ -64,13 +64,12 @@ def slow(path):
     if B_index == "not_found" :
         return False
   
-    result = True
     for i in range(B_index, len(path) - 1):
         Point = path[i]
         if(distance(Point["lat"], Point["lon"], A["lat"], A["lon"]) > 0.1):
-            result = False # if all point are too near send True (is slow)
+            return False # if all point are too near send True (is slow)
             
-    return result
+    result = True
     
 
 if slow(path):
