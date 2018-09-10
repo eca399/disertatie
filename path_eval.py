@@ -22,7 +22,6 @@ def path_length_vs_diameter(path):
     for i in range(len(path) - 1):
         a = path[i]
         b = path[i+1]
-        print('a lat {} a lon {} b lat {} b lon {}'.format(a["lat"], a["lon"], b["lat"], b['lon']))
         path_length += distance(a, b)
     
     max_distance = 0
@@ -33,7 +32,6 @@ def path_length_vs_diameter(path):
             if(max_distance < ab):
                 max_distance = ab
          
-    print('path length {} and max distance {}'.format(path_length, max_distance))
     return path_length/max_distance
 
 #print(path_length_vs_diameter([{"lat":10, "lon":10},{"lat":10, "lon":110},{"lat":110, "lon":110}]))
