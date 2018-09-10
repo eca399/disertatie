@@ -51,12 +51,12 @@ def slow(path):
 
     A = path[-1] #current point is the last point in path
 
-    B_index = "not_found" # the most recent point older than 20 mins ago
+    B_index = "not_found" # the most recent point older than 15 mins ago
     
     for i in range(len(path) - 2, -1, -1): #reverse loop staring at len(path-2) ending just before -1, with an interation step of -1
-        if(time_difference(path[i]["time"], A["time"]) > 20):
+        if(time_difference(path[i]["time"], A["time"]) > 15):
             B_index = i
-            break  # exit the loop when the first point older than 20 min is found
+            break  # exit the loop when the first point older than 15 min is found
             
   
     result = False
