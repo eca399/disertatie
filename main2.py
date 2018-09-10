@@ -83,7 +83,7 @@ intersections, intersection_list = path_eval.intersections_count(path)
 
 print("ratio = {}\nintersections = {}".format(ratio, intersections))
 
-if intersections > 15 or ratio > 1.5:
+if intersections > 4 or ratio > 1.5:
     print('An alarm was sent')
 ###plot the graph
 fig,ax = plt.subplots(figsize=[11, 8])   
@@ -120,8 +120,6 @@ def hover(event):
             if vis:
                 annot.set_visible(False)
                 fig.canvas.draw_idle()
-
-
 
 def show_graph(x, y, names, numb_intersections, ratio):
     
