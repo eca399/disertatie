@@ -12,23 +12,27 @@ if (len(sys.argv) != 2):
 
 examplefile = sys.argv[1]
 df_test = pd.read_csv(examplefile)
-
-
-
-
-
-
-
 path = []
 x = []
 y = []
 names = []
 path = []
+radius = 0.1
 for i in range(df_test.shape[0]):
     path.append({"lat": df_test.iloc[i]['lat'], "lon": df_test.iloc[i]['lon'], "index": i, "time": df_test.iloc[i]['time']})
     x.append(df_test.iloc[i]['lat'])
     y.append(df_test.iloc[i]['lon'])
     names.append(str(i))
+
+def point_index_in_cluster(lat, lon):
+    df_clustered = pd.read_csv('user-location-clustered.csv')
+    index = -1
+
+    for i, cluster in enumerate(df_clustered.itertuples()):
+        if distance(lat, lon, cluster[1], cluster[2]) < radius:
+            return i
+
+    return index
 
 def time_difference(date_time1, date_time2):
     d1 = datetime.datetime.strptime(date_time1, '%Y-%m-%d %H:%M:%S')
@@ -48,8 +52,9 @@ def distance(lat1, lon1, lat2, lon2):
     return d    
     
 def slow(path):
-
     A = path[-1] #current point is the last point in path
+    if (point_index_in_cluster(A["lat"], A["lon"]) > -1):
+        return False
 
     B_index = "not_found" # the most recent point older than 15 mins ago
     
@@ -57,19 +62,16 @@ def slow(path):
         if(time_difference(path[i]["time"], A["time"]) > 15):
             B_index = i
             break  # exit the loop when the first point older than 15 min is found
-            
-  
-    result = False
     
     if B_index == "not_found" :
         return False
   
     for i in range(B_index, len(path) - 1):
         Point = path[i]
-        if(distance(Point["lat"], Point["lon"], A["lat"], A["lon"]) > 0.1):
-            return False # if all point are too near send True (is slow)
+        if(distance(Point["lat"], Point["lon"], A["lat"], A["lon"]) > 0.1 or point_index_in_cluster(Point["lat"], Point["lon"]) > -1):
+            return False 
             
-    result = True
+    return True # if all point are too near send True (is slow)
     
 
 if slow(path):
