@@ -32,6 +32,7 @@ def path_length_vs_diameter(path):
             if(max_distance < ab):
                 max_distance = ab
          
+    print('path length {} and max distance {}'.format(path_length, max_distance))
     return path_length/max_distance
 
 #print(path_length_vs_diameter([{"lat":10, "lon":10},{"lat":10, "lon":110},{"lat":110, "lon":110}]))
@@ -46,9 +47,7 @@ def intersections_count(path):
         for j in range(i + 2, len(path) - 1):
             m = path[j]
             n = path[j + 1]
-            
-#            if(intersects2(a,b,m,n) != intersects(a,b,m,n)):
-#               print("diff")
+        
             
             if(intersects2(a, b, m, n)) and distance2(a["lat"], a["lon"], b["lat"], b["lon"]) > min_segment_len and \
             distance2(m["lat"], m["lon"], n["lat"], n["lon"]) > min_segment_len:
@@ -57,8 +56,6 @@ def intersections_count(path):
                 result += 1
                 
     return result, intersection_list
-    
-#print(intersections_count([{"lat":0, "lon":0},{"lat":0, "lon":100},{"lat":100, "lon":100}, {"lat":-5, "lon":50}]))
 
 def ccw(A,B,C):
     return (C["lat"]-A["lat"]) * (B["lon"]-A["lon"]) > (B["lat"]-A["lat"]) * (C["lon"]-A["lon"])

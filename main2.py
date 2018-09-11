@@ -83,8 +83,10 @@ intersections, intersection_list = path_eval.intersections_count(path)
 
 print("ratio = {}\nintersections = {}".format(ratio, intersections))
 
-if intersections > 4 or ratio > 1.5:
-    print('An alarm was sent')
+if intersections >= 4:
+    print('The number of intersections is too large ({})'.format(intersections))
+if ratio > 1.5:
+    print('The ratio is too high ({})'.format(ratio))
 ###plot the graph
 fig,ax = plt.subplots(figsize=[11, 8])   
 annot = ax.annotate("", xy=(0,0), xytext=(20,20),textcoords="offset points",
