@@ -24,6 +24,11 @@ for i in range(df_test.shape[0]):
     y.append(df_test.iloc[i]['lon'])
     names.append(str(i))
 
+ratio = path_eval.path_length_vs_diameter(path)
+intersections, intersection_list = path_eval.intersections_count(path)
+
+print("ratio = {}\nintersections = {}".format(ratio, intersections))
+
 def point_index_in_cluster(lat, lon):
     df_clustered = pd.read_csv('user-location-clustered.csv')
     index = -1
@@ -73,20 +78,6 @@ def slow(path):
             
     return True # if all point are too near send True (is slow)
     
-
-if slow(path):
-    print("Sending too slow alert")
-
-    
-ratio = path_eval.path_length_vs_diameter(path)
-intersections, intersection_list = path_eval.intersections_count(path)
-
-print("ratio = {}\nintersections = {}".format(ratio, intersections))
-
-if intersections >= 4:
-    print('The number of intersections is too large ({})'.format(intersections))
-if ratio > 1.5:
-    print('The ratio is too high ({})'.format(ratio))
 ###plot the graph
 fig,ax = plt.subplots(figsize=[11, 8])   
 annot = ax.annotate("", xy=(0,0), xytext=(20,20),textcoords="offset points",
@@ -131,6 +122,19 @@ def show_graph(x, y, names, numb_intersections, ratio):
     #ratio = transition_mat[kstartPoint][kendPoint]['routes'][kindex]['ratio'] 
     ax.set_title('Number of intersections: {} and ratio: {}'.format(numb_intersections, ratio))
     plt.plot(x,y, marker = 'o')
-    plt.show()
+    plt.show() 
 
-show_graph(x, y, names, intersections, ratio)  
+if slow(path):
+    print("An alert was sent. Too slow alert")
+    show_graph(x, y, names, intersections, ratio) 
+    sys.exit(1)
+
+if intersections >= 4:
+    print('An alert was sent. The number of intersections is too high ({})'.format(intersections))
+    show_graph(x, y, names, intersections, ratio) 
+    sys.exit(1)
+if ratio > 1.5:
+    print('An alert was sent. The ratio is too high ({})'.format(ratio))
+    show_graph(x, y, names, intersections, ratio) 
+    sys.exit(1)
+
