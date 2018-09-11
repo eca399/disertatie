@@ -27,7 +27,7 @@ for i in range(df_test.shape[0]):
 ratio = path_eval.path_length_vs_diameter(path)
 intersections, intersection_list = path_eval.intersections_count(path)
 
-print("ratio = {}\nintersections = {}".format(ratio, intersections))
+print("ratio = %6.2f\nintersections = %d" % (ratio, intersections))
 
 def point_index_in_cluster(lat, lon):
     df_clustered = pd.read_csv('user-location-clustered.csv')
