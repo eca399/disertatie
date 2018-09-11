@@ -35,7 +35,7 @@ def path_length_vs_diameter(path):
             if(max_distance < ab):
                 max_distance = ab
          
-    print('path length is %6.2f and max distance is %6.2f' % (path_length, max_distance))
+    print('path length is %6.2f km and max distance is %6.2f km' % (path_length, max_distance))
     return path_length/max_distance
 
 #print(path_length_vs_diameter([{"lat":10, "lon":10},{"lat":10, "lon":110},{"lat":110, "lon":110}]))

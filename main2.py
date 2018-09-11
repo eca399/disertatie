@@ -158,23 +158,28 @@ def show_graph(x, y, names, numb_intersections, ratio):
     plt.plot(x,y, marker = 'o')
     plt.show() 
 
+last_latitude = path[-1]["lat"]
+last_longitude = path[-1]["lon"]
+
 if slow(path):
-    print("An alert was sent. Too slow alert. User is now on street {}".format(get_street_name_online(path[-1]["lat"], path[-1]["lon"])))
+    print("An alert was sent. Too slow alert. User is now on street {} at latitude {} and longitude {}"
+    .format(get_street_name_online(last_latitude, last_longitude), last_latitude, last_longitude))
     show_graph(x, y, names, intersections, ratio) 
     sys.exit(1)
 
 if intersections >= 4:
-    print('An alert was sent. The number of intersections is too high ({}). User is now on street {}'
-    .format(intersections, get_street_name_online(path[-1]["lat"], path[-1]["lon"])))
+    print('An alert was sent. The number of intersections is too high ({}). User is now on street {} at latidude {} and longitude {}'
+    .format(intersections, get_street_name_online(last_latitude, last_longitude), last_latitude, last_longitude))
     show_graph(x, y, names, intersections, ratio) 
     sys.exit(1)
 if ratio > 1.5:
-    street_name = get_street_name_online(path[-1]["lat"], path[-1]["lon"])
+    street_name = get_street_name_online(last_latitude, last_longitude)
     if (street_name == "notReturnedByHere"):
-        street_name = "latitude  " + str(path[-1]["lat"]) + " and longitude  " + str(path[-1]["lon"])
+        street_name = "latitude  " + str(last_latitude) + " and longitude  " + str(last_longitude)
         print('An alert was sent. The ratio is too high (%6.2f). User is now at %s.' % (ratio, street_name))
     else:
-        print('An alert was sent. The ratio is too high (%6.2f). User is now on street %s.' % (ratio, street_name))
+        print('An alert was sent. The ratio is too high (%6.2f). User is now on street %s at latitude %s and longitude %s.'
+         % (ratio, street_name, str(last_latitude), last_longitude))
     show_graph(x, y, names, intersections, ratio) 
     sys.exit(1)
 
