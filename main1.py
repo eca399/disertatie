@@ -84,9 +84,8 @@ def get_street_name_online(lat, lon):
 
     text_data = bytes_data.decode("utf8")
     here_answer = json.JSONDecoder().decode(text_data)
-    
-    
-    
+    print('here answer {}'.format(here_answer))
+
     address = here_answer["Response"]["View"][0]["Result"][0]["Location"]["Address"]
     street = "notReturnedByHere"
     if ("Street" in address):

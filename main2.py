@@ -3,7 +3,8 @@ import sys
 import path_eval
 import datetime
 from math import radians, cos, sin, asin, sqrt, atan2
-# from show_graph_2 import *
+import urllib.request
+import json
 
 
 if (len(sys.argv) != 2):
@@ -28,6 +29,40 @@ ratio = path_eval.path_length_vs_diameter(path)
 intersections, intersection_list = path_eval.intersections_count(path)
 
 print("ratio = %6.2f\nintersections = %d" % (ratio, intersections))
+
+def get_street_name_online(lat, lon):
+    key2 = "AIzaSyDxxslZEt-75zj2mLR4oXzip4BazkPFHVE"
+    google_url = "https://roads.googleapis.com/v1/snapToRoads?path="
+    google_url += str(lat)
+    google_url += ","
+    google_url += str(lon)
+    google_url += "&interpolate=false&key=" + key2
+    
+    bytes_answer = urllib.request.urlopen(google_url).read()
+    text_answer = bytes_answer.decode("utf8")
+    google_answer = json.JSONDecoder().decode(text_answer)
+    
+    #print("google answered...")
+    
+    snapped_lat = google_answer["snappedPoints"][0]["location"]["latitude"]
+    snapped_lon = google_answer["snappedPoints"][0]["location"]["longitude"]
+    
+    snapped_lat = str(snapped_lat)
+    snapped_lon = str(snapped_lon)
+    
+    
+    bytes_data = urllib.request.urlopen("https://reverse.geocoder.api.here.com/6.2/reversegeocode.json?prox="+snapped_lat+"%2C"+snapped_lon+"%2C250&mode=retrieveAddresses&maxresults=1&gen=9&app_id=WWBAntTsRvOS0fscgPXJ&app_code=4NuAvXOIiG1gaP_vFTgu5Q").read()
+
+    text_data = bytes_data.decode("utf8")
+    here_answer = json.JSONDecoder().decode(text_data)
+    
+    address = here_answer["Response"]["View"][0]["Result"][0]["Location"]["Address"]
+    street = "notReturnedByHere"
+    if ("Street" in address):
+        street = address["Street"]
+    
+    #print("here answered...{}".format(address))
+    return street
 
 def point_index_in_cluster(lat, lon):
     df_clustered = pd.read_csv('user-location-clustered.csv')
@@ -100,7 +135,6 @@ def update_annot(ind):
     annot.get_bbox_patch().set_facecolor('b')
     annot.get_bbox_patch().set_alpha(0.4)
 
-
 def hover(event):
     vis = annot.get_visible()
     if event.inaxes == ax:
@@ -125,16 +159,23 @@ def show_graph(x, y, names, numb_intersections, ratio):
     plt.show() 
 
 if slow(path):
-    print("An alert was sent. Too slow alert")
+    print("An alert was sent. Too slow alert. User is now on street {}".format(get_street_name_online(path[-1]["lat"], path[-1]["lon"])))
     show_graph(x, y, names, intersections, ratio) 
     sys.exit(1)
 
 if intersections >= 4:
-    print('An alert was sent. The number of intersections is too high ({})'.format(intersections))
+    print('An alert was sent. The number of intersections is too high ({}). User is now on street {}'
+    .format(intersections, get_street_name_online(path[-1]["lat"], path[-1]["lon"])))
     show_graph(x, y, names, intersections, ratio) 
     sys.exit(1)
 if ratio > 1.5:
-    print('An alert was sent. The ratio is too high ({})'.format(ratio))
+    street_name = get_street_name_online(path[-1]["lat"], path[-1]["lon"])
+    if (street_name == "notReturnedByHere"):
+        street_name = "latitude  " + str(path[-1]["lat"]) + " and longitude  " + str(path[-1]["lon"])
+        print('An alert was sent. The ratio is too high (%6.2f). User is now at %s.' % (ratio, street_name))
+    else:
+        print('An alert was sent. The ratio is too high (%6.2f). User is now on street %s.' % (ratio, street_name))
     show_graph(x, y, names, intersections, ratio) 
     sys.exit(1)
+
 
